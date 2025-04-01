@@ -4,16 +4,19 @@ import MovieCard from "../components/MovieCard.jsx";
 function Home(){
     const [searchQuery, setSearchQuery] = useState("");
 
-    function HandleSearch(){
+    function HandleSearch(e){
+        e.preventDefault()
         alert(searchQuery)
+        setSearchQuery("")
 
     }
 
     const movies = [
         {id: 1, title: "Homem aranha 1", releaseDate: "2022"},
-        {id: 2, title: "Homem aranha 2", releaseDate: "2022"},
+        {id: 2, title: "Senhor dos aneis", releaseDate: "2022"},
         {id: 3, title: "Homem aranha 3", releaseDate: "2022"},
-        {id: 4, title: "Homem aranha 4", releaseDate: "2022"},
+        {id: 4, title: "Pablo", releaseDate: "2022"},
+        {id: 8, title: "Pablo 2", releaseDate: "2022"},
     ];
 
 
@@ -37,7 +40,7 @@ function Home(){
 
         <div className="movie-grid">
             {movies.map( (movie) => (
-                <MovieCard movie={movie} key={movie.id} />
+                movie.title.startsWith(searchQuery) && <MovieCard movie={movie} key={movie.id} />
                 )
             )}
 
