@@ -1,5 +1,5 @@
 import Home from "./pages/Home.jsx";
-import './App.css'
+import './css/App.css'
 import {Route, Routes} from "react-router-dom";
 import NavBar from "./components/NavBar.jsx";
 import Favorites from "./pages/Favorites.jsx";
